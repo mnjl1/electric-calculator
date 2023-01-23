@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Розрахунок роботи пристрою.</title>
+</head>
+<style>
+    .alert {
+        text-align: center;
+        color: red;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2 id="heading">Розрахунок часу роботи пристрою</h2>
+        <form id="form">
+            <div class="row">
+                <div class="six columns">
+                    <label for="amper-hours">Ємність батареї, Агод</label>
+                    <input class="u-full-width" type="text" placeholder="Агод" id="amper-hours"/>
+                </div>
+                <div class="six columns">
+                    <label for="volt">Вольтаж, який видає пристрій, вольт</label>
+                    <select class="u-full-width" id="volt">
+                      <option>9</option>
+                      <option>12</option>
+                      <option>15</option>
+                      <option>18</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="six columns">
+                    <label for="vats-hours">Скільки потребляє пристрій, Ват*год</label>
+                    <input class="u-full-width" type="text" placeholder="Ват*год" id="watt-hours"/>
+                </div>
+                <div class="six columns">
+                    <label for="calculate-btn">C (Агод) * V (В) * η / P (Вт) = T (годин)</label>
+                    <input class="u-full-width" type="submit" value="Обчислити" id="calculate-btn">
+                </div>
+            </div>
+        </form>
+        <div>
+            <h5 class="message"></h5>
+        </div>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>Ємність павербанку, Агод</th>
+                    <th>Вольтаж павербанку, Вольт</th>
+                    <th>Потреба пристрої, Ват*год</th>
+                    <th>Годин, хвилин</th>
+                </tr>
+            </thead>
+            <tbody id="item-list"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
